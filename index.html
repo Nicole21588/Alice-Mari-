@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Alice no País das Maravilhas ✨</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Luckiest+Guy&family=Fredoka+One&family=Nunito:wght@400;600;700;800&display=swap"/>
+<link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+
+<a href="#story-text" class="skip-nav">Pular para o texto</a>
+
+<div class="cursor" id="cursor" aria-hidden="true"></div>
+
+<div class="word-tooltip" id="wordTooltip" role="tooltip"></div>
+
+<div class="stars-bg" id="starsBg" aria-hidden="true"></div>
+
+<div class="floater" style="left:5%;top:20%;animation-duration:7s;font-size:3rem;" aria-hidden="true">🐇</div>
+<div class="floater" style="left:90%;top:30%;animation-duration:9s;font-size:2rem;" aria-hidden="true">♠</div>
+<div class="floater" style="left:8%;top:70%;animation-duration:11s;font-size:2.5rem;" aria-hidden="true">🍄</div>
+<div class="floater" style="left:88%;top:65%;animation-duration:8s;font-size:2rem;" aria-hidden="true">♥</div>
+<div class="floater" style="left:50%;top:5%;animation-duration:10s;font-size:2rem;" aria-hidden="true">⏰</div>
+
+
+<div class="wrapper">
+
+  <header class="fade-up">
+    <div class="rabbit-hole" aria-hidden="true">
+      <div class="rabbit-falling">🐇</div>
+    </div>
+    <h1 class="title">
+      Alice no País<br>das Maravilhas
+    </h1>
+    <p class="subtitle">✨ Uma aventura com palavras ✨</p>
+
+
+
+  </header>
+
+  <section class="controls-panel fade-up delay-2" aria-labelledby="panel-title">
+    <h2 class="panel-title" id="panel-title">🎩 Ferramentas Mágicas</h2>
+
+    <div class="controls-grid">
+     
+      <div class="control-group">
+        <label class="control-label" for="letterInput">
+          <span>✨</span> Quantas letras tem a palavra?
+        </label>
+        <input type="number" id="letterInput" class="magic-input" min="1" max="20"
+          placeholder="Ex: 5" aria-describedby="letterHelp"/>
+        <span id="letterHelp" class="input-help">
+          Digite um número e veja as palavras acenderem!
+        </span>
+        <div class="btn-row">
+          <button class="btn-magic btn-highlight" onclick="highlightByLength()"
+            aria-label="Destacar palavras pelo número de letras">🌟 Destacar!</button>
+          <button class="btn-magic btn-clear" onclick="clearAll()"
+            aria-label="Limpar todos os destaques">🧹 Limpar</button>
+        </div>
+        <div class="result-bubble result-highlight" id="resultHighlight" role="status" aria-live="polite">
+          <span>✨</span>
+          <span id="resultHighlightText"></span>
+        </div>
+      </div>
+
+    
+      <div class="control-group">
+        <label class="control-label" for="wordInput">
+          <span>🔍</span> Qual palavra você quer contar?
+        </label>
+        <input type="text" id="wordInput" class="magic-input"
+          placeholder="Ex: Alice" aria-describedby="wordHelp" autocomplete="off"/>
+        <span id="wordHelp" class="input-help">
+          Descubra quantas vezes ela aparece no texto!
+        </span>
+        <button class="btn-magic btn-count" onclick="countWord()"
+          aria-label="Contar quantas vezes a palavra aparece">🔢 Contar e Destacar!</button>
+        <div class="result-bubble result-count" id="resultCount" role="status" aria-live="polite">
+          <span class="big-num" id="countNum">0</span>
+          <span id="resultCountText"></span>
+        </div>
+      </div>
+    </div>
+
+   
+    <div class="status-bar" id="statusBar" aria-live="polite">
+      <span>🐇</span>
+      <span id="statusMsg">Escolha uma opção acima para começar a aventura!</span>
+    </div>
+
+
+  </section>
+
+  
+  <section class="text-section fade-up delay-4" aria-labelledby="story-title">
+    <h2 class="text-section-title" id="story-title">📖 A História</h2>
+    <div class="story-text" id="story-text" tabindex="0"></div>
+  </section>
+
+  
+
+<script src="script.js"></script>
+</body>
+</html>
